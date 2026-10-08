@@ -1,0 +1,198 @@
+/* Color palette
+    Rose: #e27781
+    Peach: #f3b7a5
+    Blue-gray: #83a9aa
+    Text: #000000
+*/
+
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ---------- Theme variables ----------
+   Light theme is the default. The dark theme overrides these values
+   whenever the <html> element has data-theme="dark". */
+   :root {
+    --bg-color: #ffffff;
+    --bg-overlay: rgba(0, 0, 0, 0);    /* no overlay in light mode */
+    --text-color: #000000;
+    --heading-color: #e27781;
+    --subheading-color: #83a9aa;
+    --accent-color: #83a9aa;
+    --button-bg: #fef0e1;
+    --button-hover-bg: #f6f7f7;
+    --button-text: #e27781;
+    --nav-text: #ffffff;
+}
+
+/* Dark theme: same variable names, different values */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --bg-overlay: rgba(0, 0, 0, 0.8);  /* darkens the Canva background image */
+    --text-color: #f1f1f1;
+    --heading-color: #f3b7a5;
+    --subheading-color: #83a9aa;
+    --accent-color: #5f8586;
+    --button-bg: #2a2a2a;
+    --button-hover-bg: #3a3a3a;
+    --button-text: #f3b7a5;
+    --nav-text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* Page background: Canva image with a theme-controlled overlay on top.
+   In light mode the overlay is transparent; in dark mode it darkens the image. */
+   body {
+    background: linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+                url('./images/Aboutme_image.png');
+    background-color: var(--bg-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+ /* Name heading */
+h1 {
+    color: var(--heading-color);
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 2rem;
+}
+
+/* Subheading */
+h2 {
+    color: var(--subheading-color);
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.image {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Headshot */
+.image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+}
+
+/* Bio paragraph */
+p {
+    font-size: 2rem;
+    color: var(--text-color);
+    line-height: 5rem;
+    margin-bottom: 5rem;
+}
+
+/* Contact me button */
+.btn {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    background: var(--button-bg);
+    font-size: 2.2rem;
+    text-decoration: none;
+    color: var(--button-text);
+    border-radius: 10px;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: var(--button-hover-bg);
+}
+
+/* ----------------- Navbar ------------------ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background-color: var(--accent-color);
+}
+
+.nav-brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--nav-text);
+}
+
+/* Nav links laid out in a row with flexbox, gap adds spacing between them */
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+.nav-links a:hover {
+    color: var(--heading-color);
+}
+
+/* Main about section */
+.about-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 6rem 4rem;
+}
+
+.about-photo img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+}
+
+.about-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Theme toggle button in the navbar */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--nav-text);
+    border-radius: 50%;
+    width: 4.4rem;
+    height: 4.4rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Small grow effect when hovering over the button */
+.theme-toggle:hover {
+    transform: scale(1.1);
+}

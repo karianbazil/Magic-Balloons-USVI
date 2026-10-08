@@ -1,0 +1,28 @@
+{
+  "name": "magic-balloons-usvi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karianbazil/Magic-Balloons-USVI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/karianbazil/Magic-Balloons-USVI/issues"
+  },
+  "homepage": "https://github.com/karianbazil/Magic-Balloons-USVI#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mysql2": "^3.24.5"
+  }
+}
